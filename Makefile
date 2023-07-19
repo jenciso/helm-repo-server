@@ -1,7 +1,9 @@
 prepare:
 	mkdir -p html/{charts,sources}
 	helm create html/sources/app1
-	helm package -d html/charts/ html/sources/app1 
+	helm create html/sources/app2
+	helm package -d html/charts/ html/sources/app1
+	helm package -d html/charts/ html/sources/app2
 	helm repo index html/charts/ --url http://localhost:8088/charts/
 
 start:
